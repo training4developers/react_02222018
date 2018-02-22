@@ -1,0 +1,9 @@
+Exercise #4
+
+1. Move the array of car objects to index.js.
+
+2. Pass the array of car objects into Car Tool.
+
+3. Update the render of Car Tool to use props.
+
+4. Ensure it all works.
