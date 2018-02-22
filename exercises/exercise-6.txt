@@ -1,0 +1,5 @@
+Exercise #6
+
+1. Take the car form data and add a new car to the array of cars. Hint: make a copy of the cars passed in via state.
+
+2. Ensure the new car is displayed in the table and reset the form to blank fields.
