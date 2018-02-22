@@ -6,6 +6,7 @@ export class ColorTool extends React.Component {
     super(props);
 
     this.state = {
+      colors: props.colors.concat(),
       colorName: '',
       colorHexCode: '',
     };
@@ -13,11 +14,33 @@ export class ColorTool extends React.Component {
     // this.onChange = this.onChange.bind(this);
   }
 
+  // setState = (newState, fn) => {
+
+  //   this.state = Object.assign({}, this.state, newState);
+  //   this.render();
+
+  //   fn(this.state);
+  // }
+
   onChange = (e) => {
 
     // triggers a re-render
     this.setState({
       [ e.target.name ]: e.target.value,
+    });
+
+  }
+
+  saveColor = () => {
+
+    this.setState({
+      colors: this.state.colors.concat({
+        name: this.state.colorName,
+        hexCode: this.state.colorHexCode,
+      }),
+      // resetting for fields
+      colorName: '',
+      colorHexCode: '',
     });
 
   }
@@ -31,7 +54,7 @@ export class ColorTool extends React.Component {
         <h1>Color Tool</h1>
       </header>
       <ul>
-        {this.props.colors.map(color => <li>{color.name}</li>)}
+        {this.state.colors.map(color => <li>{color.name}</li>)}
       </ul>
       <form>
 
@@ -45,6 +68,8 @@ export class ColorTool extends React.Component {
           <input type="color" id="color-hexcode-input" name="colorHexCode"
             value={this.state.colorHexCode} onChange={this.onChange}  />
         </div>
+
+        <button type="button" onClick={this.saveColor}>Save Color</button>
 
       </form>
     </div>;
