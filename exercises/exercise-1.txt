@@ -1,0 +1,9 @@
+Exercise #1
+
+1. Create a new Car Tool component inside the components folder.
+
+2. In the render of the Car Tool component, display a header (using an h1) which has the following content 'Car Tool'.
+
+3. Import the Car Tool component into index.js, and display under the Color Tool component.
+
+4. Run the code, ensure it works.
