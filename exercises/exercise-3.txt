@@ -2,7 +2,7 @@ Exercise #3
 
 1. Create a variable named cars inside the Car Tool render function.
 
-2. Assign to the cars variable and array of car objects.
+2. Assign to the cars variable and array of car objects. Use the two cars from the last exercise to populate the array.
 
 3. Display the data in the cars array of objects in the actual HTML table. Remove the static data and it to populate the array. And use the array to populate the table.
 
