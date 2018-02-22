@@ -1,0 +1,15 @@
+Exercise #2
+
+1. Add an HTML table to your Car Tool component.
+
+2. The table will have 5 columns:
+
+Make
+Model
+Year
+Color
+Price
+
+3. Add two cars to the table. Only two cars.
+
+4. Ensure the Car Table is properly displayed in the web browser.
