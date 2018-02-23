@@ -1,0 +1,11 @@
+Exercise #8
+
+1. Create a new component named Car Table. Move the table to the new component.
+
+2. Use the new Car Table component in Car Tool, and pass the cars from Car Tool into Car Table.
+
+3. Create a new component named Car View Row. Move the table row in the Car Table component to the Car View Row component.
+
+4. Use the new Car View Row component in the Car Table component, passing the car for each row into the Car Row Component.
+
+5. Ensure the Car Tool displays the car table and all of the car rows in the browser. Ensure adding new cars still works correctly.
