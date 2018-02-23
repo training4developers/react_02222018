@@ -1,0 +1,7 @@
+Exercise #7
+
+1. Create a Tool Header component. You may have already done this during the demo so do not create a second one.
+
+2. Utlize the Tool Header component in both the Color Tool and Car Tool components.
+
+3. Ensure the header works for both components.
