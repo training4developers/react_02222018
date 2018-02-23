@@ -17,6 +17,7 @@ export class ColorTool extends React.Component {
   }
 
   render() {
+    console.log('Color Tool Rendered');
     return <div>
       <ToolHeader headerText="Color Tool" />
       <UnorderedList listItems={this.state.colors.map(c => c.name)} />

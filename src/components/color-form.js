@@ -32,6 +32,7 @@ export class ColorForm extends React.Component {
   }  
 
   render() {
+    console.log('Color Form Rendered');
     return <form>
       <div>
         <label htmlFor="color-name-input">Color Name:</label>

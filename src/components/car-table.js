@@ -5,7 +5,6 @@ import { CarRow } from './car-row';
 export class CarTable extends React.Component {
 
   render() {
-
     return <table>
       <thead>
         <tr>
