@@ -1,0 +1,14 @@
+Exercise #10
+
+1. Add a new column header to the Car Table named 'Actions'.
+
+2. Add a new column to the Car View Row. In the new column, add a Delete button.
+
+3. When the delete button is clicked, remove the car in the remove from array of cars managed in Car Tool.
+
+Examples of Deleting from an Array:
+
+  filter
+  slice/concat
+
+4. Ensure all functionality works. So the user should be able to add cars and remove cars.
