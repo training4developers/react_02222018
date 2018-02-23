@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { ToolHeader } from './tool-header';
+import { UnorderedList } from './unordered-list';
 
 export class ColorTool extends React.Component {
 
@@ -45,9 +46,7 @@ export class ColorTool extends React.Component {
 
     return <div>
       <ToolHeader headerText="Color Tool" />
-      <ul>
-        {this.state.colors.map(color => <li>{color.name}</li>)}
-      </ul>
+      <UnorderedList listItems={this.state.colors.map(c => c.name)} />
       <form>
 
         <div>
