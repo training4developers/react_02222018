@@ -1,10 +1,23 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
 import { ToolHeader } from './tool-header';
 import { UnorderedList } from './unordered-list';
 import { ColorForm } from './color-form';
 
 export class ColorTool extends React.Component {
+
+  static propTypes = {
+    colors: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      hexCode: PropTypes.string.isRequired,
+    })).isRequired,
+  };
+
+  static defaultProps = {
+    colors: [],
+  };
 
   constructor(props) {
     super(props);
@@ -19,7 +32,7 @@ export class ColorTool extends React.Component {
   render() {
     console.log('Color Tool Rendered');
     return <div>
-      <ToolHeader headerText="Color Tool" />
+      <ToolHeader />
       <UnorderedList listItems={this.state.colors.map(c => c.name)} />
       <ColorForm onSubmitColor={this.saveColor} />
     </div>;

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { ToolHeader } from './tool-header';
 import { CarTable } from './car-table';

@@ -1,0 +1,10 @@
+Exercise #12
+
+1. Add prop types to the following components:
+
+Car Tool
+Car Table
+Car View Row
+Car Form
+
+2. Ensure everything works.
