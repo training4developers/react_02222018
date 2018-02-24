@@ -1,88 +1,60 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
 import { ToolHeader } from './tool-header';
 import { CarTable } from './car-table';
+import { CarForm } from './car-form';
 
 export class CarTool extends React.Component {
+
+  static propTypes = {
+    cars: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      make: PropTypes.string.isRequired,
+      model: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      color: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    })).isRequired,    
+  };
+
+  static defaultProps = {
+    cars: [],
+  };
 
   constructor(props) {
     super(props);
 
     this.state = {
       cars: props.cars.concat(),
-      make: '',
-      model: '',
-      year: 1900,
-      color: '',
-      price: 0,
     };
   }
 
-  onChange = e => {
+  insertCar = car => {
 
     this.setState({
-      [ e.target.name ]: e.target.value,
+      cars: this.state.cars.concat({
+        ...car,
+        id: Math.max(...this.state.cars.map(c => c.id)) + 1,
+      }),
     });
 
   };
 
-  onClick = () => {
+  deleteCar = carId => {
+
     this.setState({
-      cars: this.state.cars.concat({
-        make: this.state.make,
-        model: this.state.model,
-        year: this.state.year,
-        color: this.state.color,
-        price: this.state.price,
-      }),
-      make: '',
-      model: '',
-      year: 1900,
-      color: '',
-      price: 0,      
-    })
-  };
+      cars: this.state.cars.filter(c => c.id !== carId),
+    });
+
+  }
+
 
   render() {
-
     return <div>
       <ToolHeader headerText="Car Tool" />
-      <CarTable cars={this.state.cars} />
-      <form>
-
-        <div>
-          <label htmlFor="make-input">Make:</label>
-          <input type="text" id="make-input" name="make"
-            value={this.state.make} onChange={this.onChange}  />
-        </div>
-
-        <div>
-          <label htmlFor="model-input">Model:</label>
-          <input type="text" id="model-input" name="model"
-            value={this.state.model} onChange={this.onChange}  />
-        </div>
-
-        <div>
-          <label htmlFor="year-input">Year:</label>
-          <input type="text" id="year-input" name="year"
-            value={this.state.year} onChange={this.onChange}  />
-        </div>
-
-        <div>
-          <label htmlFor="color-input">Color:</label>
-          <input type="text" id="color-input" name="color"
-            value={this.state.color} onChange={this.onChange}  />
-        </div>
-
-        <div>
-          <label htmlFor="price-input">Price:</label>
-          <input type="text" id="price-input" name="price"
-            value={this.state.price} onChange={this.onChange}  />
-        </div>
-
-        <button type="button" onClick={this.onClick}>Save Car</button>
-        
-      </form>
+      <CarTable cars={this.state.cars} onDeleteCar={this.deleteCar} />
+      <CarForm onSubmitCar={this.insertCar} />
     </div>;
   }
 

@@ -23,3 +23,19 @@ ReactDOM.render(
   </div>,
   document.querySelector('#root'),
 );
+
+// setTimeout(() => {
+  
+//   console.log('timeout expired');
+
+//   colorList.splice(1, 1);
+
+//   ReactDOM.render(
+//     <div>
+//       <ColorTool colors={colorList} />
+//       <CarTool cars={carList} />
+//     </div>,
+//     document.querySelector('#root'),
+//   );
+
+// }, 4000)

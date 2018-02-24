@@ -22,8 +22,14 @@ export class ColorTool extends React.Component {
   constructor(props) {
     super(props);
 
+    console.log('car tool constructor');
+
     this.state = { colors: props.colors.concat() };
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({ colors: nextProps.colors });
+  // }
 
   saveColor = (newColor) => {
     this.setState({ colors: this.state.colors.concat(newColor) });

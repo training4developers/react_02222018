@@ -29,7 +29,11 @@ export class ColorForm extends React.Component {
       colorHexCode: '',
     });
 
-  }  
+  }
+
+  componentDidMount() {
+    this.colorNameInput.focus();
+  }
 
   render() {
     console.log('Color Form Rendered');
@@ -37,6 +41,7 @@ export class ColorForm extends React.Component {
       <div>
         <label htmlFor="color-name-input">Color Name:</label>
         <input type="text" id="color-name-input" name="colorName"
+          ref={ input => this.colorNameInput = input }
           value={this.state.colorName} onChange={this.onChange}  />
       </div>
       <div>
